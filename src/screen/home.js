@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -10,8 +10,45 @@ import {
 import Constants from "expo-constants";
 import { Colors } from "../color/color";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import * as Facebook from "expo-facebook";
 
 const Home = (props) => {
+  const [isLoggedin, setLoggedinStatus] = useState(false);
+  const [userData, setUserData] = useState(null);
+  const [isImageLoading, setImageLoadStatus] = useState(false);
+
+  async function logIn() {
+    try {
+      await Facebook.initializeAsync({
+        appId: '4137038706315111',
+      });
+      const {
+        type,
+        token,
+        expirationDate,
+        permissions,
+        declinedPermissions,
+      } = await Facebook.logInWithReadPermissionsAsync({
+        permissions: ['public_profile'],
+      });
+      if (type === 'success') {
+        // Get the user's name using Facebook's Graph API
+        const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
+        Alert.alert('Logged in!', `Hi ${(await response.json()).name}!`);
+      } else {
+        // type === 'cancel'
+      }
+    } catch ({ message }) {
+      alert(`Facebook Login Error: ${message}`);
+    }
+  }
+
+  const logout = () => {
+    setLoggedinStatus(false);
+    setUserData(null);
+    setImageLoadStatus(false);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.firstBlock}>
@@ -30,7 +67,7 @@ const Home = (props) => {
         </Text>
       </View>
       <View style={styles.lastBlock}>
-        <TouchableOpacity style={styles.btn1}>
+        <TouchableOpacity style={styles.btn1} onPress={logIn}>
           <View style={styles.flex}>
             <FontAwesome name="facebook" size={25} color={Colors.fbBlue} />
             <Text style={styles.btnt1}>Continue With Facebook</Text>

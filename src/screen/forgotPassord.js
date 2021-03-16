@@ -67,13 +67,13 @@ const ForgotPassword = (props) => {
             borderWidth: 1,
             borderColor: Colors.lightgray,
             borderRadius: 10,
-            backgroundColor: Colors.sparkBlue,
+            backgroundColor: Colors.white,
             width: "100%",
             paddingLeft: 10,
             height: 65,
           }}
         >
-          <Text style={labelStyle1}>Full Name</Text>
+          <Text style={labelStyle1}>Email</Text>
           <TextInput
             style={{
               height: 60,

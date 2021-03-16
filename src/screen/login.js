@@ -79,7 +79,7 @@ const Login = (props) => {
             borderWidth: 1,
             borderColor: Colors.lightgray,
             borderRadius: 10,
-            backgroundColor: Colors.sparkBlue,
+            backgroundColor: Colors.white,
             width: "100%",
             paddingLeft: 10,
             height: 65,
@@ -110,7 +110,7 @@ const Login = (props) => {
             borderWidth: 1,
             borderColor: Colors.lightgray,
             borderRadius: 10,
-            backgroundColor: Colors.sparkBlue,
+            backgroundColor: Colors.white,
             width: "100%",
           }}
         >
@@ -213,6 +213,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.powderBlue,
+    marginBottom:20
   },
   btntext: {
     fontSize: 20,
