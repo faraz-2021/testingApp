@@ -1,14 +1,14 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { StyleSheet } from "react-native";
 import Home from "./src/screen/home";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import signup from "./src/screen/SignUp";
+import Signup from "./src/screen/SignUp";
 import Login from "./src/screen/login";
 import Welcome from "./src/screen/welcome";
-import ForgotPassword from "./src/screen/forgotPassord";
+import ForgotPassword from "./src/screen/forgotPassword";
 import { Colors } from "./src/color/color";
+import { StatusBar } from "expo-status-bar";
 
 const Stack = createStackNavigator();
 
@@ -21,7 +21,7 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="signup" component={signup} />
+        <Stack.Screen name="signup" component={Signup} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="welcome" component={Welcome} />

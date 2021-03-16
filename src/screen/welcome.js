@@ -17,15 +17,14 @@ const styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
     padding: 20,
     width: Dimensions.get("window").width,
-    alignItems:"center",
-    justifyContent:"center",
-    backgroundColor:Colors.white,
-
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: Colors.white,
   },
-  text1:{
-      fontSize:30,
-      fontWeight:'bold'
-  }
+  text1: {
+    fontSize: 30,
+    fontWeight: "bold",
+  },
 });
 
 export default Welcome;

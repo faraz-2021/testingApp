@@ -268,8 +268,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.powderBlue,
-    marginBottom:20
-
+    marginBottom: 20,
   },
   btntext: {
     fontSize: 20,
